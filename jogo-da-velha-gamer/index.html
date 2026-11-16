@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#376ac0">
+  <meta name="description" content="Projeto de jogo da velha com tema de videogames, feito com HTML, CSS, JavaScript e Bootstrap.">
+  <title>All Games | Jogo da Velha Gamer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-icon" aria-hidden="true">🎮</span><span>All Games</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link " href="pages/historia.html">História</a></li>
+          <li class="nav-item"><a class="nav-link " href="pages/dicas.html">Dicas</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="container main-home">
+  <div class="text-center page-intro mb-4">
+    <h1>Jogo da Velha Gamer </h1>
+  </div>
+  <div class="row g-4 align-items-start">
+    <section class="col-12 col-lg-6" aria-labelledby="game-title">
+      <div class="simple-card h-100">
+        <h2 class="section-title" id="game-title">jogue agora</h2>
+        <div class="players d-flex justify-content-center align-items-center gap-3 mb-3" aria-label="Jogadores">
+          <span>🎮 <b>Controle</b></span><small>vs.</small><span>👾 <b>Alien</b></span>
+        </div>
+        <div class="board" id="board" role="group" aria-label="Tabuleiro do jogo da velha">
+              <button type="button" class="cell" data-index="0" aria-label="Linha 1, coluna 1, vazio"></button>
+              <button type="button" class="cell" data-index="1" aria-label="Linha 1, coluna 2, vazio"></button>
+              <button type="button" class="cell" data-index="2" aria-label="Linha 1, coluna 3, vazio"></button>
+              <button type="button" class="cell" data-index="3" aria-label="Linha 2, coluna 1, vazio"></button>
+              <button type="button" class="cell" data-index="4" aria-label="Linha 2, coluna 2, vazio"></button>
+              <button type="button" class="cell" data-index="5" aria-label="Linha 2, coluna 3, vazio"></button>
+              <button type="button" class="cell" data-index="6" aria-label="Linha 3, coluna 1, vazio"></button>
+              <button type="button" class="cell" data-index="7" aria-label="Linha 3, coluna 2, vazio"></button>
+              <button type="button" class="cell" data-index="8" aria-label="Linha 3, coluna 3, vazio"></button>
+        </div>
+        <p class="status text-center mt-3" id="status" role="status" aria-live="polite">Vez de <span class="team-name mark-x">🎮 Controle</span></p>
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-3">
+          <button class="btn btn-primary" type="button" id="reset-button">Nova partida</button>
+          <button class="btn btn-outline-primary" type="button" id="reset-score">Zerar placar</button>
+        </div>
+        <div class="row scoreboard g-2 mt-3" aria-label="Placar">
+          <div class="col-4"><div class="score-box"><small>🎮 Controle</small><strong id="score-x">0</strong></div></div>
+          <div class="col-4"><div class="score-box"><small>Empates</small><strong id="score-draw">0</strong></div></div>
+          <div class="col-4"><div class="score-box"><small>👾 Alien</small><strong id="score-o">0</strong></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="col-12 col-lg-6" aria-labelledby="slide-title">
+      <div class="simple-card h-100">
+        <h2 class="section-title" id="slide-title">Mundo dos games</h2>
+        <div id="slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5500" aria-label="Imagens do tema de videogames">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active slide-one">
+              <div class="slide-art" aria-hidden="true">🎮 <span class="vs">VS</span> 👾</div>
+              <div class="carousel-caption"><h3>Controle x Alien</h3><p>Escolha seu personagem favorito!</p></div>
+            </div>
+            <div class="carousel-item slide-two">
+              <div class="slide-art" aria-hidden="true">🎮 🎮 🎮</div>
+              <div class="carousel-caption"><h3>Três em linha</h3><p>Vale na horizontal, vertical ou diagonal.</p></div>
+            </div>
+            <div class="carousel-item slide-three">
+              <div class="slide-art" aria-hidden="true">🏆</div>
+              <div class="carousel-caption"><h3>Quem vai ganhar?</h3><p>Pense bem antes de fazer sua jogada.</p></div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev" aria-label="Slide anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next" aria-label="Próximo slide"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+        </div>
+        <div class="how-to mt-3"><b>Como jogar?</b><p class="mb-0 mt-1">Cada jogador escolhe uma casa por vez. Quem conseguir colocar três símbolos iguais em linha primeiro vence.</p></div>
+      </div>
+    </section>
+  </div>
+  <section class="card info-card my-4" aria-labelledby="about-title">
+    <div class="card-body">
+      <h2 class="h5 mb-2" id="about-title">Sobre o jogo</h2>
+      <p>O jogo da velha é um passatempo conhecido por muita gente. Aqui ele ganhou uma versão inspirada nos videogames, com um controle e um alien no lugar do X e do O.</p>
+      <a href="pages/historia.html" class="btn btn-primary">Saiba mais</a>
+      <a href="pages/dicas.html" class="btn btn-outline-primary ms-1">Ver dicas</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer py-3 mt-auto">
+  <div class="container d-flex justify-content-between flex-wrap gap-2">
+    <small>All Games • Projeto escolar</small>
+    <small>HTML, CSS, JavaScript e Bootstrap</small>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/myscript.js"></script>
+</body>
+</html>
